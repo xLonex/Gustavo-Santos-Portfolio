@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portifolio</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <video class="video-background" autoplay loop muted>
+      <source src="fundo.mp4" type="video/mp4" />
+    </video>
+    <header class="header">
+      <a href="#home" class="logo">Gustavo <span>Santos</span></a>
+      <box-icon name="menu" id="menu-icon"></box-icon>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#services" class="active">Por que você precisa de um site?</a>
+        <a href="#sobre" class="active">Sobre mim</a>
+        <a href="#portifolio" class="active">Projetos</a>
+      </nav>
+    </header>
+    <div class="btn-abrir" id="btn-menu">
+      <i class="bx bx-menu"></i>
+    </div>
+    <div class="menu-mobile" id="menu-mobile">
+      <div class="btn-fechar">
+        <i class="bx bx-x"></i>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li>
+            <a href="#services" class="active"
+              >Por que você precisa de um site?</a
+            >
+          </li>
+          <li><a href="#sobre" class="active">Sobre mim</a></li>
+          <li><a href="#portifolio" class="active">Projetos</a></li>
+          <li><a href="https://x.com/lGustavoSantosl">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+    <button id="btn-topo" class="btn-topo">
+      <i class="bx bxs-up-arrow-circle"></i>
+    </button>
+    <div class="overlay-menu" id="overlay-menu"></div>
+    <section class="home" id="home">
+      <div class="home-content">
+        <h1>Olá meu nome é <span>Gustavo</span></h1>
+        <h3 class="text-animation">E eu sou <span id="typewriter"></span></h3>
+        <p>
+          Seja muito bem ao meu site, sou um programador Front end apaixonado em
+          crianção de sites. Entre em contato comigo para que possamos criar o
+          seu projeto no seu estilo !
+        </p>
+        <div class="social-icons">
+          <a href="#"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://x.com/lGustavoSantosl"
+            ><i class="bx bxl-twitter"></i
+          ></a>
+          <a href="https://github.com/xLonex"><i class="bx bxl-github"></i></a>
+        </div>
+        <div class="btn-group">
+          <a
+            href="https://wa.me/5511996844010?text=Olá%20Gustavo,%20vi%20seu%20site%20e%20gostaria%20de%20fazer%20um%20orçamento"
+            target="_blank"
+            class="btn"
+            >Contato</a
+          >
+        </div>
+      </div>
+      <div class="home-img">
+        <img src="./eu.jpg" alt="" />
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <h2 class="heading">Por que você precisa de um site?</h2>
+      <div class="service-container">
+        <div class="service-box">
+          <div class="service-info">
+            <h4>Credibilidade e Profissionalismo</h4>
+            <p>
+              Um site transmite confiança e profissionalismo. Empresas sem um
+              site podem parecer menos confiáveis ou até inexistentes para
+              clientes em potencial.
+            </p>
+            <p>
+              📌 Exemplo: Imagine dois concorrentes. Um tem um site bem
+              estruturado e outro só tem um perfil no Instagram. Qual parece
+              mais confiável?
+            </p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-info">
+            <h4>Facilidade para Encontrar Informações</h4>
+            <p>
+              Com um site, seus clientes podem encontrar rapidamente informações
+              importantes, como horários de funcionamento, serviços oferecidos,
+              preços e formas de contato.
+            </p>
+            <p>
+              📌 Exemplo: Se um cliente quiser saber o preço do seu serviço ou
+              onde sua empresa está localizada, ele pode encontrar essas
+              informações direto no site, sem precisar esperar resposta no
+              WhatsApp.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-info">
+            <h4>Maior Alcance e Visibilidade</h4>
+            <p>
+              Com um site bem otimizado (SEO), sua empresa pode aparecer nos
+              resultados do Google e atrair clientes novos que nem sabiam que
+              você existia.
+            </p>
+            <p>
+              📌 Exemplo: Alguém pesquisando "melhor pizzaria na cidade" pode
+              encontrar seu site e virar cliente.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-info">
+            <h4>Autonomia e Controle Total</h4>
+            <p>
+              Diferente das redes sociais, onde as regras mudam constantemente,
+              um site é seu. Você controla as informações, o design e a
+              experiência do cliente.
+            </p>
+            <p>
+              📌 Exemplo: Redes sociais podem excluir perfis ou limitar o
+              alcance de postagens, mas um site sempre estará lá para seus
+              clientes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sobre" id="sobre">
+      <div class="interface">
+        <div class="flex">
+          <div class="img-sobre">
+            <img src="eu.jpg" alt="" />
+          </div>
+          <div class="txt-sobre">
+            <h2>MUITO PRAZER, EU SOU <span>Gustavo Santos</span></h2>
+            <p>
+              Apaixonado por tecnologia, programação e literatura sou um
+              estudante de programação em busca de ingressar carreira nesse
+              mercado digital
+            </p>
+            <p>
+              Atualmente estou trabalhando de maneira autonoma na criação de
+              sites enquanto aprimo meus estudos e conhecimentos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="portifolio" id="portifolio">
+      <div class="interface">
+        <h1>Projetos</h1>
+        <div class="carrossel">
+          <div class="img-port" style="background-image: url(./chat.png)">
+            <div class="overlay">Chat Online</div>
+          </div>
+          <div class="img-port" style="background-image: url(./imagem.jpg)">
+            <div class="overlay">Projeto 2 [ Em breve ]</div>
+          </div>
+          <div class="img-port" style="background-image: url(./imagem.jpg)">
+            <div class="overlay">Projeto 2 [ Em breve ]</div>
+          </div>
+          <div class="img-port" style="background-image: url(./imagem.jpg)">
+            <div class="overlay">Projeto 2 [ Em breve ]</div>
+          </div>
+          <div class="img-port" style="background-image: url(./imagem.jpg)">
+            <div class="overlay">Projeto 2 [ Em breve ]</div>
+          </div>
+          <div class="img-port" style="background-image: url(./imagem.jpg)">
+            <div class="overlay">Projeto 2 [ Em breve ]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="interface">
+        <div class="line-footer">
+          <div class="flex">
+            <div class="logo-footer">
+              <a href="#home" class="logo">Gustavo <span>Santos</span></a>
+            </div>
+            <div class="social-icons">
+              <a href="#"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://x.com/lGustavoSantosl"
+                ><i class="bx bxl-twitter"></i
+              ></a>
+              <a href="https://github.com/xLonex"
+                ><i class="bx bxl-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="line-footer borda">
+          <p>
+            <i class="bx bxs-envelope"></i
+            ><a href="mailto:lgustavaresl@gmail.com">lgustavaresl@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

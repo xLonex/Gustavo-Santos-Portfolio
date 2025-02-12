@@ -1,0 +1,909 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --cor-1: #590995;
+  --cor-2: #58179a;
+  --cor-3: #5725a0;
+  --cor-4: #5532a5;
+  --cor-5: #5440ab;
+  --cor-6: #534eb0;
+  --cor-7: #525cb5;
+  --cor-8: #5169bb;
+  --cor-9: #5077c0;
+  --cor-10: #4e85c5;
+  --cor-11: #4d93cb;
+  --cor-12: #4ca0d0;
+  --cor-13: #4baed6;
+  --cor-14: #4abcdb;
+  --cor-15: #48cae0;
+  --cor-16: #47d7e6;
+  --cor-17: #46e5eb;
+  --cor-18: #0ebeff;
+  --cor-19: #1dc2ff;
+  --cor-20: #2cc6ff;
+  --cor-21: #3bcaff;
+  --cor-22: #4aceff;
+  --cor-23: #59d2ff;
+  --cor-24: #68d6ff;
+  --cor-25: #77daff;
+  --cor-26: #87dfff;
+  --cor-27: #96e3ff;
+  --cor-28: #a5e7ff;
+  --cor-29: #b4ebff;
+  --cor-30: #c3efff;
+  --cor-31: #d2f3ff;
+  --cor-32: #e1f7ff;
+  --cor-33: #f0fbff;
+  --cor-34: #ffffff;
+  --cor-35: #ffffff;
+  --cor-36: #f5f0f8;
+  --cor-37: #eae0f2;
+  --cor-38: #e0d1eb;
+  --cor-39: #d6c2e5;
+  --cor-40: #cbb2de;
+  --cor-41: #c1a3d7;
+  --cor-42: #b693d1;
+  --cor-43: #ac84ca;
+  --cor-44: #a275c3;
+  --cor-45: #9765bd;
+  --cor-46: #8d56b6;
+  --cor-47: #8347b0;
+  --cor-48: #7837a9;
+  --cor-49: #6e28a2;
+  --cor-50: #63189c;
+  --cor-51: #590995;
+}
+html {
+  font-size: 60%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: black;
+  color: white;
+}
+span,
+.home-img,
+.logo span,
+.home-img img {
+  animation: text-color-animation 15s infinite linear;
+}
+.video-background {
+  filter: blur(40px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+section {
+  min-height: 100vh;
+}
+/* -------------- Header --------------*/
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 4rem 12% 1rem;
+  display: flex; /* adicionado */
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+.logo {
+  font-size: 3rem;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+.logo span {
+  text-shadow: 0 0 20px white;
+}
+.navbar a {
+  font-size: 1.8rem;
+  color: white;
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+  border-bottom: 3px solid transparent;
+  z-index: 2;
+}
+.navbar a:hover {
+  border-bottom: 3px solid white;
+  text-shadow: 0 0 20px white;
+}
+/* -------------------- | Menu Mobile | -------------------- */
+.btn-abrir {
+  display: none;
+}
+.btn-abrir i {
+  color: rgba(255, 255, 255, 0.39);
+  font-size: 40px;
+}
+@media (max-width: 1024px) {
+  .btn-abrir {
+    display: block; /* Mostra o botão */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 101;
+    cursor: pointer;
+  }
+}
+
+.menu-mobile {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -70%;
+  z-index: 100;
+  width: 70%;
+  transition: 0.5s;
+}
+
+.menu-mobile.abrir-menu {
+  right: 0;
+}
+
+.menu-mobile nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.menu-mobile nav ul a {
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 20px 8%;
+  display: block;
+  text-decoration: none;
+}
+
+.menu-mobile nav ul a:hover {
+  background: var(--cor-1);
+}
+
+.menu-mobile .btn-fechar {
+  padding: 20px 4%;
+  text-align: right;
+  cursor: pointer;
+}
+
+.menu-mobile .btn-fechar i {
+  color: white;
+  font-size: 50px;
+}
+.overlay-menu {
+  background-color: rgba(0, 0, 0, 0.774);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: none;
+}
+/* -------------------- | Botão de voltar para o topo | -------------------- */
+.btn-topo {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.219);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.btn-topo i {
+  color: rgba(0, 0, 0, 0.705);
+  font-size: 24px;
+}
+.btn-topo.visible {
+  display: flex;
+  opacity: 1;
+}
+/* -------------------- | Home | -------------------- */
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15rem;
+}
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  text-align: left;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-left: 40px;
+}
+span {
+  color: var(--cor-1);
+}
+.logo span {
+  color: var(--cor-1);
+}
+.home-content h3 {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  font-size: 3.5rem;
+}
+.home-content h1 {
+  font-size: 5rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  line-height: 1;
+}
+.home-img {
+  border-radius: 50%;
+  margin: 50px;
+}
+.home-img img {
+  position: relative;
+  width: 18vw;
+  border-radius: 50%;
+  box-shadow: 0 0 25px var(--cor-1);
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+.home-img img:hover {
+  box-shadow: 0 0 25px var(--cor-1), 0 0 25px var(--cor-1),
+    0 0 25px var(--cor-1);
+}
+.home-content p {
+  text-align: left;
+  font-size: 2.1rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  background: transparent;
+  border: 2px solid var(--cor-1);
+  font-size: 2.5rem;
+  border-radius: 50%;
+  color: var(--cor-1);
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.3s ease-in-out;
+  animation: text-color-animation 15s infinite linear;
+  animation: box-color-animation 15s infinite linear;
+}
+.social-icons a:hover {
+  color: var(--roxo2);
+  transform: scale(1.3) translateY(-5px);
+  box-shadow: 0 0 25px var(--cor-1);
+  background-color: var(--cor-1);
+}
+.btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: var(--cor-1);
+  box-shadow: 0 0 25px var(--cor-1);
+  border-radius: 4rem;
+  font-size: 1.6rem;
+  color: white;
+  border: 2px solid transparent;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 50px var(--cor-1);
+}
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.btn-group a:nth-last-of-type(2) {
+  background-color: black;
+  color: var(--cor-1);
+  border: 2px solid var(--cor-1);
+  box-shadow: 0 0 25px transparent;
+}
+.btn-group a:nth-of-type(2):hover {
+  box-shadow: 0 0 25px var(--cor-1);
+  background-color: var(--cor-1);
+}
+/* -------------------- | Por que eu devo ter um site? | -------------------- */
+section.services {
+  margin-top: 150px;
+}
+.services {
+  color: black;
+}
+
+.services h2 {
+  margin-bottom: 5rem;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+}
+
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding: 50px;
+  gap: 3rem;
+}
+
+.service-box {
+  color: white;
+  background-color: rgba(89, 9, 149, 0.5);
+  min-height: 300px;
+  border-radius: 3rem;
+  border: 5px solid transparent;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  overflow-y: auto;
+}
+
+.service-box:hover {
+  background: white;
+  color: black;
+  border: 5px solid var(--cor-1);
+  transform: scale(1.03);
+}
+.service-box:hover .service-info h4 {
+  font-style: bold;
+  color: var(--cor-1);
+  transition: 0.4s ease-in-out;
+}
+
+.service-box .service-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: left;
+  align-items: baseline;
+  padding: 2rem 2rem;
+}
+
+.service-info h4 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 2;
+}
+
+.service-info p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.7;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+}
+section.sobre {
+  padding: 60px 4%;
+  background-color: #00000088;
+}
+section.sobre .flex {
+  align-items: center;
+  gap: 60px;
+}
+.img-sobre img {
+  width: 400px;
+  height: auto;
+}
+.sobre .txt-sobre {
+  padding: 50px 12%;
+  color: white;
+}
+.sobre .txt-sobre h2 {
+  font-size: 40px;
+  line-height: 40px;
+}
+.sobre .txt-sobre h2 span {
+  display: block;
+}
+.sobre .txt-sobre p {
+  font-size: 20px;
+  margin: 10px;
+  text-align: justify;
+}
+
+section.portifolio {
+  padding: 40px 15%;
+  box-shadow: 0 0 40px 10px #ffffff1d;
+}
+section.portifolio h1 {
+  margin: 40px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.carrossel {
+  width: 100%;
+}
+.img-port:first-child {
+  background-position: 50% 50%;
+  background-size: contain;
+}
+
+.img-port:first-child:hover {
+  background-position: 50% 50%;
+  transform: none;
+}
+
+.img-port {
+  width: 360px;
+  height: 460px;
+  background-size: cover;
+  background-position: 100% 0%;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: 4s;
+  position: relative;
+  margin: 0 10px;
+}
+
+.img-port:hover {
+  background-position: 100% 100%;
+  transform: scale(1.1);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  background-color: #000000c2;
+  color: white;
+  opacity: 0;
+  transition: 1.5s;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+/* Estilos do Slick Carousel */
+.slick-prev:before,
+.slick-next:before {
+  color: white;
+}
+/* -------------------- | Rodapé | -------------------- */
+footer {
+  background-color: #000000be;
+  padding: 10px 2%;
+}
+footer .flex {
+  justify-content: space-between;
+}
+
+.borda {
+  border-top: 2px solid #590995;
+}
+
+footer .line-footer p i {
+  color: #590995;
+  font-size: 20px;
+}
+footer .line-footer p a {
+  color: white;
+  font-size: 20px;
+}
+/* -------------------- | Animações| -------------------- */
+
+@keyframes text-color-animation {
+  0% {
+    color: var(--cor-1);
+  }
+  2% {
+    color: var(--cor-2);
+  }
+  4% {
+    color: var(--cor-3);
+  }
+  6% {
+    color: var(--cor-4);
+  }
+  8% {
+    color: var(--cor-5);
+  }
+  10% {
+    color: var(--cor-6);
+  }
+  12% {
+    color: var(--cor-7);
+  }
+  14% {
+    color: var(--cor-8);
+  }
+  16% {
+    color: var(--cor-9);
+  }
+  18% {
+    color: var(--cor-10);
+  }
+  20% {
+    color: var(--cor-11);
+  }
+  22% {
+    color: var(--cor-12);
+  }
+  24% {
+    color: var(--cor-13);
+  }
+  26% {
+    color: var(--cor-14);
+  }
+  28% {
+    color: var(--cor-15);
+  }
+  30% {
+    color: var(--cor-16);
+  }
+  32% {
+    color: var(--cor-17);
+  }
+  34% {
+    color: var(--cor-18);
+  }
+  36% {
+    color: var(--cor-19);
+  }
+  38% {
+    color: var(--cor-20);
+  }
+  40% {
+    color: var(--cor-21);
+  }
+  42% {
+    color: var(--cor-22);
+  }
+  44% {
+    color: var(--cor-23);
+  }
+  46% {
+    color: var(--cor-24);
+  }
+  48% {
+    color: var(--cor-25);
+  }
+  50% {
+    color: var(--cor-26);
+  }
+  52% {
+    color: var(--cor-27);
+  }
+  54% {
+    color: var(--cor-28);
+  }
+  56% {
+    color: var(--cor-29);
+  }
+  58% {
+    color: var(--cor-30);
+  }
+  60% {
+    color: var(--cor-31);
+  }
+  62% {
+    color: var(--cor-32);
+  }
+  64% {
+    color: var(--cor-33);
+  }
+  66% {
+    color: var(--cor-34);
+  }
+  68% {
+    color: var(--cor-35);
+  }
+  70% {
+    color: var(--cor-36);
+  }
+  72% {
+    color: var(--cor-37);
+  }
+  74% {
+    color: var(--cor-38);
+  }
+  76% {
+    color: var(--cor-39);
+  }
+  78% {
+    color: var(--cor-40);
+  }
+  80% {
+    color: var(--cor-41);
+  }
+  82% {
+    color: var(--cor-42);
+  }
+  84% {
+    color: var(--cor-43);
+  }
+  86% {
+    color: var(--cor-44);
+  }
+  88% {
+    color: var(--cor-45);
+  }
+  90% {
+    color: var(--cor-46);
+  }
+  92% {
+    color: var(--cor-47);
+  }
+  94% {
+    color: var(--cor-48);
+  }
+  96% {
+    color: var(--cor-49);
+  }
+  98% {
+    color: var(--cor-50);
+  }
+  100% {
+    color: var(--cor-51);
+  }
+}
+
+@keyframes box-color-animation {
+  0% {
+    background-color: rgba(89, 9, 149, 0.5);
+  }
+  2% {
+    background-color: rgba(88, 23, 154, 0.5);
+  }
+  4% {
+    background-color: rgba(87, 37, 160, 0.5);
+  }
+  6% {
+    background-color: rgba(85, 50, 165, 0.5);
+  }
+  8% {
+    background-color: rgba(84, 64, 171, 0.5);
+  }
+  10% {
+    background-color: rgba(83, 78, 176, 0.5);
+  }
+  12% {
+    background-color: rgba(82, 92, 181, 0.5);
+  }
+  14% {
+    background-color: rgba(81, 105, 187, 0.5);
+  }
+  16% {
+    background-color: rgba(80, 119, 192, 0.5);
+  }
+  18% {
+    background-color: rgba(78, 133, 197, 0.5);
+  }
+  20% {
+    background-color: rgba(77, 147, 203, 0.5);
+  }
+  22% {
+    background-color: rgba(76, 160, 208, 0.5);
+  }
+  24% {
+    background-color: rgba(75, 174, 214, 0.5);
+  }
+  26% {
+    background-color: rgba(74, 188, 219, 0.5);
+  }
+  28% {
+    background-color: rgba(72, 202, 224, 0.5);
+  }
+  30% {
+    background-color: rgba(71, 215, 230, 0.5);
+  }
+  32% {
+    background-color: rgba(70, 229, 235, 0.5);
+  }
+  34% {
+    background-color: rgba(14, 190, 255, 0.5);
+  }
+  36% {
+    background-color: rgba(29, 194, 255, 0.5);
+  }
+  38% {
+    background-color: rgba(44, 198, 255, 0.5);
+  }
+  40% {
+    background-color: rgba(59, 202, 255, 0.5);
+  }
+  42% {
+    background-color: rgba(74, 206, 255, 0.5);
+  }
+  44% {
+    background-color: rgba(89, 210, 255, 0.5);
+  }
+  46% {
+    background-color: rgba(104, 214, 255, 0.5);
+  }
+  48% {
+    background-color: rgba(119, 218, 255, 0.5);
+  }
+  50% {
+    background-color: rgba(135, 223, 255, 0.5);
+  }
+  52% {
+    background-color: rgba(150, 227, 255, 0.5);
+  }
+  54% {
+    background-color: rgba(165, 231, 255, 0.5);
+  }
+  56% {
+    background-color: rgba(180, 235, 255, 0.5);
+  }
+  58% {
+    background-color: rgba(195, 239, 255, 0.5);
+  }
+  60% {
+    background-color: rgba(210, 243, 255, 0.5);
+  }
+  62% {
+    background-color: rgba(225, 247, 255, 0.5);
+  }
+  64% {
+    background-color: rgba(240, 251, 255, 0.5);
+  }
+  66% {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    background-color: rgba(89, 9, 149, 0.5);
+  }
+}
+/* -------------------- | Responsividade | -------------------- */
+@media screen and (max-width: 1024px) {
+  /*----------------------- Home ----------------------- */
+  .home {
+    display: flex;
+    gap: 1px;
+    flex-direction: column-reverse;
+  }
+  .home-content h1 {
+    margin: auto;
+    font-size: 32px;
+  }
+  .home-content h3 {
+    margin: auto;
+    font-size: 28px;
+  }
+  .home-content p {
+    padding: 20px;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  .home-img img {
+    width: 20vh;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--cor-1);
+  }
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  /*----------------------- Botão de voltar para o topo ----------------------- */
+  .btn-topo {
+    display: flex;
+  }
+  /*----------------------- Por que devo ter um site? ----------------------- */
+  .service-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 20px;
+  }
+
+  .service-box .service-info {
+    padding: 2rem;
+  }
+  .services h2 {
+    font-size: 23px;
+  }
+
+  .service-info h4 {
+    font-size: 2.2rem;
+  }
+
+  .service-info p {
+    font-size: 1.9rem;
+  }
+  /*----------------------- Navbar -----------------------*/
+  .header {
+    display: none;
+  }
+  .header a {
+    margin-left: 35px;
+  }
+  .navbar {
+    display: none;
+  }
+  /*----------------------- Sobre -----------------------*/
+  section.sobre .flex {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .img-sobre img {
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .sobre .txt-sobre {
+    padding: 20px;
+  }
+
+  .sobre .txt-sobre h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .sobre .txt-sobre p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  /* Footer */
+  footer {
+    padding: 10px 2%;
+  }
+  footer .flex {
+    justify-content: baseline;
+  }
+
+  .borda {
+    border-top: 2px solid #590995;
+  }
+
+  footer .line-footer p i,
+  footer .line-footer p a {
+    font-size: 15px;
+  }
+  .logo-footer {
+    width: 1%;
+  }
+}
