@@ -797,34 +797,59 @@ footer .line-footer p a {
 }
 /* -------------------- | Responsividade | -------------------- */
 @media screen and (max-width: 1024px) {
+  /*----------------------- Fundo ----------------------- */
+  .video-background {
+    filter: blur(100px);
+  }
   /*----------------------- Home ----------------------- */
   .home {
     display: flex;
     gap: 1px;
     flex-direction: column-reverse;
+    margin-top: 80px;
+  }
+  .home-content {
+    margin: auto;
+    align-items: center;
   }
   .home-content h1 {
     margin: auto;
-    font-size: 32px;
+    font-size: 27px;
   }
   .home-content h3 {
     margin: auto;
-    font-size: 28px;
+    font-size: 24px;
   }
   .home-content p {
-    padding: 20px;
     justify-content: center;
-    margin-right: 20px;
+    text-align: center;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+  .home-img {
+    margin: 0;
   }
   .home-img img {
-    width: 20vh;
+    width: 40vw;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--cor-1);
   }
   .btn-group {
     display: flex;
     justify-content: center;
-    width: 100%;
+    text-align: center;
+    padding: 50px;
+  }
+  .social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  .btn {
+    display: flex;
   }
   /*----------------------- Botão de voltar para o topo ----------------------- */
   .btn-topo {
@@ -841,7 +866,7 @@ footer .line-footer p a {
     padding: 2rem;
   }
   .services h2 {
-    font-size: 23px;
+    font-size: 26px;
   }
 
   .service-info h4 {
@@ -884,6 +909,7 @@ footer .line-footer p a {
   }
 
   .sobre .txt-sobre p {
+    text-align: left;
     font-size: 18px;
     margin: 10px 0;
   }
@@ -901,7 +927,7 @@ footer .line-footer p a {
 
   footer .line-footer p i,
   footer .line-footer p a {
-    font-size: 15px;
+    font-size: 20px;
   }
   .logo-footer {
     width: 1%;
